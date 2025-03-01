@@ -1,0 +1,243 @@
+body {
+    background-image: url('background1.jpg'); /* Default background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white; /* Ensure all text is white */
+    transition: background-image 0.5s ease-in-out; /* Smooth background transition */
+    overflow: hidden; /* Prevent scrolling */
+    position: relative; /* Required for the blur effect */
+}
+
+/* Blur effect for smoother background transition */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Inherit the background from the body */
+    filter: blur(10px); /* Add blur effect */
+    z-index: -1; /* Place it behind the content */
+    opacity: 0; /* Start with no blur */
+    transition: opacity 0.5s ease-in-out; /* Smooth blur transition */
+}
+
+/* Apply blur when the body has the 'blur' class */
+body.blur::before {
+    opacity: 1; /* Show the blurred background */
+}
+/* Style for the category navigation bar */
+#category-bar {
+    position: absolute;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    flex-direction: column; /* Stack icons and underline */
+}
+
+/* Category icons */
+.category-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.category-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Underline directly below category icons */
+#category-underline {
+    width: 330px; /* Adjust this value to fit all icons */
+    height: 4px; /* Thickness */
+    background-color: white; /* Line color */
+    margin-top: 5px; /* Space between icons and line */
+    position: relative;
+    overflow: hidden; /* Ensure the curve stays within the line */
+}
+
+/* Add a slight upward curve to the ends */
+#category-underline::before,
+#category-underline::after {
+    content: '';
+    position: absolute;
+    width: 20px; /* Width of the curve */
+    height: 20px; /* Height of the curve */
+    background-color: white; /* Match the line color */
+    border-radius: 50%; /* Create a circular shape */
+    bottom: -10px; /* Position the curve upward */
+}
+
+/* Left curve */
+#category-underline::before {
+    left: -10px; /* Position the curve slightly outside the line */
+}
+
+/* Right curve */
+#category-underline::after {
+    right: -10px; /* Position the curve slightly outside the line */
+}
+
+/* Line above the active category */
+a.active {
+    position: relative;
+}
+
+a.active::before {
+    content: '';
+    position: absolute;
+    top: -35px; /* Position the line above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Width of the line */
+    height: 3px; /* Thickness of the line */
+    background-color: orange; /* Orange color */
+    border-radius: 2px; /* Slightly rounded edges */
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); /* Orange glow effect */
+}
+
+/* Style the time display */
+#time {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    opacity: 0.8;
+    color: white;
+}
+
+/* Style the copyright notice */
+#copyright {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Style the background button */
+#bg-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#bg-button:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#bg-button img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Disable button during cooldown */
+#bg-button.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* Social Links Section */
+/* Social Links Section */
+#social-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#social-links h1 {
+    font-size: 2rem; /* Smaller heading */
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Social Sections Container */
+.social-sections-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow sections to wrap to the next line if needed */
+    justify-content: center;
+    gap: 15px; /* Smaller gap between sections */
+}
+
+/* Social Section Styling */
+.social-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Smaller gap between icon and text */
+    padding: 10px; /* Smaller padding */
+    border-radius: 8px; /* Slightly rounded corners */
+    overflow: hidden; /* Ensure the blur effect stays within the section */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for contrast */
+    transition: transform 0.3s ease, backdrop-filter 0.3s ease;
+    max-width: 200px; /* Limit the width of each section */
+}
+
+.social-section:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    backdrop-filter: blur(15px); /* Increase blur on hover */
+}
+
+.social-icons {
+    display: flex;
+    gap: 8px; /* Smaller gap between icons */
+}
+
+.social-icon {
+    width: 30px; /* Smaller icons */
+    height: 30px;
+    object-fit: contain; /* Maintain aspect ratio */
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Enlarge icon on hover */
+}
+
+.social-text h2 {
+    font-size: 1.2rem; /* Smaller heading */
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+.social-text p {
+    font-size: 0.9rem; /* Smaller text */
+    opacity: 0.8;
+    margin: 0; /* Remove default margin */
+}
+
+/* Discord Links Styling */
+.discord-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px; /* Smaller gap between icon and label */
+}
+
+.discord-link p {
+    font-size: 0.8rem; /* Smaller label text */
+    opacity: 0.8;
+    margin: 0; /* Remove default margin */
+}
