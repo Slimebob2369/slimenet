@@ -329,63 +329,62 @@ a.active::before {
     color: #fff; /* White text for better contrast on dark background */
     margin-top: -2px; /* Adjust spacing to fit in the box */
 }
-
 /* Welcome Section */
 #welcome-section {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Space between boxes */
+    gap: 15px; /* Smaller gap between boxes */
     margin-top: 10vh; /* Adjust vertical positioning */
-    padding: 20px;
+    padding: 15px; /* Smaller padding */
     animation: fadeIn 2s ease-in-out; /* Fade-in animation */
     flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
 }
 
 .welcome-box {
     background-color: rgba(0, 0, 0, 0.6); /* Darkened background for better readability */
-    padding: 20px;
-    border-radius: 10px;
+    padding: 15px; /* Smaller padding */
+    border-radius: 8px; /* Slightly smaller rounded corners */
     color: white;
     text-align: center;
-    width: 250px; /* Fixed width for all boxes */
+    width: 200px; /* Even smaller fixed width for all boxes */
     animation: float 3s ease-in-out infinite; /* Floating animation */
-    margin: 10px; /* Add margin for spacing */
+    margin: 8px; /* Smaller margin */
 }
 
 .welcome-image {
-    width: 60px; /* Smaller image size */
+    width: 50px; /* Even smaller image size */
     height: auto;
-    margin-bottom: 15px; /* Space between image and text */
+    margin-bottom: 10px; /* Smaller space between image and text */
 }
 
 #welcome-section h1 {
-    font-size: 2rem; /* Smaller heading */
-    margin-bottom: 10px;
+    font-size: 1.8rem; /* Smaller heading */
+    margin-bottom: 8px; /* Smaller margin */
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.4);
 }
 
 #welcome-section p {
-    font-size: 1rem; /* Smaller text */
-    margin-bottom: 15px;
+    font-size: 0.9rem; /* Smaller text */
+    margin-bottom: 10px; /* Smaller margin */
     opacity: 0.9;
-    line-height: 1.5; /* Improve readability */
+    line-height: 1.4; /* Tighter line height */
 }
 
 .welcome-buttons {
     display: flex;
     justify-content: center;
-    gap: 10px; /* Space between buttons */
+    gap: 8px; /* Smaller gap between buttons */
 }
 
 .welcome-button {
     background-color: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 8px 16px; /* Smaller padding for buttons */
-    border-radius: 5px;
+    padding: 6px 12px; /* Smaller padding for buttons */
+    border-radius: 4px; /* Smaller rounded corners */
     color: white;
     text-decoration: none;
-    font-size: 0.9rem; /* Smaller font size for buttons */
+    font-size: 0.8rem; /* Smaller font size for buttons */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -400,7 +399,7 @@ a.active::before {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-8px); /* Smaller floating effect */
     }
 }
 
@@ -418,36 +417,36 @@ a.active::before {
 @media (max-width: 768px) {
     #welcome-section {
         flex-direction: column; /* Stack boxes vertically */
-        gap: 10px; /* Reduce gap between boxes */
+        gap: 8px; /* Smaller gap between boxes */
         margin-top: 5vh; /* Adjust vertical positioning */
-        padding: 10px; /* Reduce padding for smaller screens */
+        padding: 10px; /* Smaller padding for smaller screens */
     }
 
     .welcome-box {
         width: 90%; /* Full width for mobile */
-        padding: 15px; /* Reduce padding for smaller screens */
+        padding: 12px; /* Smaller padding for mobile */
     }
 
     #welcome-section h1 {
-        font-size: 1.8rem; /* Smaller heading for mobile */
+        font-size: 1.6rem; /* Smaller heading for mobile */
     }
 
     #welcome-section p {
-        font-size: 0.9rem; /* Smaller text for mobile */
+        font-size: 0.8rem; /* Smaller text for mobile */
     }
 
     .welcome-buttons {
         flex-direction: column; /* Stack buttons vertically */
-        gap: 8px; /* Reduce gap between buttons */
+        gap: 6px; /* Smaller gap between buttons */
     }
 
     .welcome-button {
         width: 100%; /* Full width for buttons on mobile */
-        padding: 8px; /* Adjust padding for smaller screens */
+        padding: 6px; /* Smaller padding for mobile */
     }
 
     .welcome-image {
-        width: 50px; /* Smaller image for mobile */
+        width: 40px; /* Even smaller image for mobile */
     }
 }
 
@@ -457,11 +456,11 @@ a.active::before {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Smaller font size */
     color: white;
     background-color: rgba(0, 0, 0, 0.6); /* Faded box background */
-    padding: 10px 20px; /* Add padding for better spacing */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    padding: 8px 16px; /* Smaller padding */
+    border-radius: 8px; /* Smaller rounded corners */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
     z-index: 10; /* Ensure it stays above other elements */
 }
