@@ -437,14 +437,14 @@ a.active::before {
     }
 
     .welcome-box {
-        max-width: 100%; /* Full width for boxes on mobile */
+        max-width: 90%; /* Slightly smaller width for mobile */
         flex: 1 1 auto; /* Allow boxes to take full width */
         margin: 10px 0; /* Adjust margin for vertical stacking */
         padding: 15px; /* Reduce padding for smaller screens */
     }
 
     .main-box {
-        max-width: 100%; /* Full width for main box on mobile */
+        max-width: 90%; /* Slightly smaller width for mobile */
     }
 
     #welcome-section h1 {
