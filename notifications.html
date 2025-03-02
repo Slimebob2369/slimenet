@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notifications</title>
+    <title>Welcome Back</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Category navigation bar at the top -->
     <div id="category-bar">
         <div id="category-icons">
-            <a href="index.html" title="Home">
+            <a href="index.html" title="Home" class="active">
                 <img src="homeicon.png" alt="Home" class="category-icon" id="home">
             </a>
             <a href="aboutme.html" title="About Me">
@@ -19,7 +19,7 @@
             <a href="achievements.html" title="Achievements">
                 <img src="achivementicon.png" alt="Achievements" class="category-icon" id="achievements">
             </a>
-            <a href="notifications.html" title="Notifications" class="active">
+            <a href="notifications.html" title="Notifications">
                 <img src="notificationicon.png" alt="Notifications" class="category-icon" id="notifications">
             </a>
             <a href="resources.html" title="Resources">
@@ -29,13 +29,42 @@
         <div id="category-underline"></div> <!-- Underline -->
     </div>
 
-    <!-- Coming Soon Message -->
-    <div id="coming-soon">
-        <h1>Coming Soon!</h1>
+    <!-- Welcome Section -->
+    <div id="welcome-section">
+        <!-- Left Box -->
+        <div class="welcome-box left-box">
+            <img src="slime.png" alt="Slime" class="welcome-image">
+            <p>Explore my world and discover cool stuff!</p>
+        </div>
+
+        <!-- Main Box -->
+        <div class="welcome-box main-box">
+            <h1>Welcome Back!</h1>
+            <p>It's great to see you again. Explore the site and discover what's new.</p>
+            <p>Here, you'll find everything you need to know about me, my achievements, and resources to help you on your journey.</p>
+            <p>Feel free to browse around and make yourself at home. If you have any questions, don't hesitate to reach out!</p>
+            <div class="welcome-buttons">
+                <a href="aboutme.html" class="welcome-button">About Me</a>
+                <a href="achievements.html" class="welcome-button">Achievements</a>
+                <a href="resources.html" class="welcome-button">Resources</a>
+            </div>
+        </div>
+
+        <!-- Right Box -->
+        <div class="welcome-box right-box">
+            <img src="slime.png" alt="Slime" class="welcome-image">
+            <p>Check out my latest updates and projects!</p>
+        </div>
     </div>
 
-    <!-- Copyright notice in the bottom-left corner -->
-    <footer id="copyright">© Slimebob</footer>
+    <!-- View Counter -->
+    <div id="bottom-left-container">
+        <div id="view-counter" title="Website views">
+            <img src="webviews.png" alt="Web Views">
+            <span id="view-count">0</span>
+        </div>
+        <footer id="copyright">© Slimebob</footer>
+    </div>
 
     <!-- Time display in the bottom center -->
     <div id="time"></div>
