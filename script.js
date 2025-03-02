@@ -1,4 +1,5 @@
 window.onload = function () {
+    // Background cycling functionality
     const bgButton = document.getElementById('bg-button');
     let currentBgIndex = localStorage.getItem('bgIndex') || 1; // Get stored background index or default to 1
     let isCooldown = false;
@@ -45,6 +46,48 @@ window.onload = function () {
         timeElement.textContent = now.toLocaleString('en-US', options);
     }
 
+    // Update time every second
     setInterval(updateTime, 1000);
-    updateTime();
+    updateTime(); // Initial call to display time immediately
+
+    // Update the view counter
+    updateViewCounter();
 };
+
+// Function to update the view counter
+function updateViewCounter() {
+    // Get the current view count from localStorage
+    let viewCount = localStorage.getItem('viewCount');
+    let lastIncrementTime = localStorage.getItem('lastIncrementTime');
+
+    // If viewCount doesn't exist, initialize it to 0
+    if (!viewCount) {
+        viewCount = 0;
+    } else {
+        viewCount = parseInt(viewCount);
+    }
+
+    // Check if the last increment time exists and is within the last hour
+    if (lastIncrementTime) {
+        const currentTime = new Date().getTime();
+        const timeDifference = currentTime - parseInt(lastIncrementTime);
+        const oneHour = 60 * 60 * 1000; // 1 hour in milliseconds
+
+        // If less than 1 hour has passed, do not increment
+        if (timeDifference < oneHour) {
+            console.log("Counter already incremented within the last hour.");
+            document.getElementById('view-count').textContent = viewCount;
+            return;
+        }
+    }
+
+    // Increment the view count
+    viewCount += 1;
+
+    // Update the view count and last increment time in localStorage
+    localStorage.setItem('viewCount', viewCount);
+    localStorage.setItem('lastIncrementTime', new Date().getTime());
+
+    // Display the updated view count on the page
+    document.getElementById('view-count').textContent = viewCount;
+}
