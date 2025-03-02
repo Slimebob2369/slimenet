@@ -267,19 +267,220 @@ a.active::before {
     opacity: 0.8;
     margin: 0; /* Remove default margin */
 }
+/* Style for the container wrapping view counter and copyright */
+#bottom-left-container {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.5); /* Darker semi-transparent border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 12px; /* Adjusted padding for slightly larger box */
+    background-color: rgba(64, 64, 64, 0.6); /* Darker semi-transparent grey background */
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* Slightly more gap for better spacing */
+    backdrop-filter: blur(5px); /* Optional: Adds a blur effect to the background */
+    width: 80px; /* Set width to 80px */
+    height: 60px; /* Set height to 60px */
+    box-sizing: border-box; /* Ensure padding and border are included in the dimensions */
+}
 
-/* Coming Soon Message */
-#coming-soon {
+/* Style for the view counter */
+#view-counter {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Slightly more gap for better spacing */
+    font-size: 14px; /* Slightly larger font size */
+    color: #fff; /* White text for better contrast on dark background */
+    margin-bottom: 0; /* Remove margin to fit in the box */
+    position: relative; /* Required for hover text positioning */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+#view-counter img {
+    width: 20px; /* Slightly larger eye icon */
+    height: 20px;
+    margin-top: -5px; /* Move the eye image up slightly */
+}
+
+/* Hover text for the view counter */
+#view-counter:hover::after {
+    content: "Website views"; /* Text to display on hover */
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background for hover text */
+    color: #fff; /* White text color */
+    padding: 4px 8px; /* Padding for the hover text */
+    border-radius: 4px; /* Rounded corners for hover text */
+    font-size: 12px; /* Font size for hover text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    margin-top: -30px; /* Position above the view counter */
+    margin-left: -10px; /* Adjust horizontal position */
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.3s ease; /* Smooth fade-in effect */
+}
+
+#view-counter:hover::after {
+    opacity: 1; /* Show the hover text */
+}
+
+/* Style for the copyright notice */
+#copyright {
+    font-size: 12px; /* Slightly larger font size */
+    color: #fff; /* White text for better contrast on dark background */
+    margin-top: -2px; /* Adjust spacing to fit in the box */
+}
+
+/* Welcome Section */
+#welcome-section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 150px); /* Adjust height to center vertically */
-    text-align: center;
+    gap: 20px; /* Space between boxes */
+    margin-top: 10vh; /* Adjust vertical positioning */
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+    flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
 }
 
-#coming-soon h1 {
-    font-size: 3rem;
-    font-weight: bold;
+.welcome-box {
+    background-color: rgba(0, 0, 0, 0.6); /* Darkened background for better readability */
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    max-width: 300px; /* Limit width for better readability */
+    animation: float 3s ease-in-out infinite; /* Floating animation */
+    flex: 1 1 300px; /* Allow boxes to grow and shrink */
+    margin: 10px; /* Add margin for spacing on smaller screens */
+}
+
+.main-box {
+    max-width: 400px; /* Slightly wider for the main box */
+    flex: 1 1 400px; /* Allow main box to grow and shrink */
+}
+
+.left-box, .right-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-image {
+    width: 80px; /* Adjust the size of the slime image */
+    height: auto;
+    margin-bottom: 20px; /* Space between image and text */
+}
+
+#welcome-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.4);
-    opacity: 0.8;
+}
+
+#welcome-section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    line-height: 1.6; /* Improve readability */
+}
+
+.welcome-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between buttons */
+}
+
+.welcome-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.welcome-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Floating animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+    #welcome-section {
+        flex-direction: column; /* Stack boxes vertically */
+        gap: 10px; /* Reduce gap between boxes */
+        margin-top: 5vh; /* Adjust vertical positioning */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .welcome-box {
+        max-width: 100%; /* Full width for boxes on mobile */
+        flex: 1 1 auto; /* Allow boxes to take full width */
+        margin: 10px 0; /* Adjust margin for vertical stacking */
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .main-box {
+        max-width: 100%; /* Full width for main box on mobile */
+    }
+
+    #welcome-section h1 {
+        font-size: 2rem; /* Smaller heading for mobile */
+    }
+
+    #welcome-section p {
+        font-size: 1rem; /* Smaller text for mobile */
+    }
+
+    .welcome-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Reduce gap between buttons */
+    }
+
+    .welcome-button {
+        width: 100%; /* Full width for buttons on mobile */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .welcome-image {
+        width: 60px; /* Smaller image for mobile */
+    }
+}
+
+/* Time display */
+#time {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); /* Faded box background */
+    padding: 10px 20px; /* Add padding for better spacing */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    z-index: 10; /* Ensure it stays above other elements */
 }
