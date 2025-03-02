@@ -323,6 +323,13 @@ a.active::before {
     opacity: 1; /* Show the hover text */
 }
 
+/* Style for the copyright notice */
+#copyright {
+    font-size: 12px; /* Slightly larger font size */
+    color: #fff; /* White text for better contrast on dark background */
+    margin-top: -2px; /* Adjust spacing to fit in the box */
+}
+
 /* Welcome Section */
 #welcome-section {
     display: flex;
@@ -332,6 +339,7 @@ a.active::before {
     margin-top: 10vh; /* Adjust vertical positioning */
     padding: 20px;
     animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+    flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
 }
 
 .welcome-box {
@@ -342,10 +350,13 @@ a.active::before {
     text-align: center;
     max-width: 300px; /* Limit width for better readability */
     animation: float 3s ease-in-out infinite; /* Floating animation */
+    flex: 1 1 300px; /* Allow boxes to grow and shrink */
+    margin: 10px; /* Add margin for spacing on smaller screens */
 }
 
 .main-box {
     max-width: 400px; /* Slightly wider for the main box */
+    flex: 1 1 400px; /* Allow main box to grow and shrink */
 }
 
 .left-box, .right-box {
@@ -416,17 +427,60 @@ a.active::before {
     }
 }
 
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+    #welcome-section {
+        flex-direction: column; /* Stack boxes vertically */
+        gap: 10px; /* Reduce gap between boxes */
+        margin-top: 5vh; /* Adjust vertical positioning */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .welcome-box {
+        max-width: 100%; /* Full width for boxes on mobile */
+        flex: 1 1 auto; /* Allow boxes to take full width */
+        margin: 10px 0; /* Adjust margin for vertical stacking */
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .main-box {
+        max-width: 100%; /* Full width for main box on mobile */
+    }
+
+    #welcome-section h1 {
+        font-size: 2rem; /* Smaller heading for mobile */
+    }
+
+    #welcome-section p {
+        font-size: 1rem; /* Smaller text for mobile */
+    }
+
+    .welcome-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Reduce gap between buttons */
+    }
+
+    .welcome-button {
+        width: 100%; /* Full width for buttons on mobile */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .welcome-image {
+        width: 60px; /* Smaller image for mobile */
+    }
+}
+
 /* Time display */
 #time {
     position: fixed;
-    bottom: 10px; /* Bottom margin */
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.2rem; /* Font size */
+    font-size: 1.5rem;
     color: white;
     background-color: rgba(0, 0, 0, 0.6); /* Faded box background */
-    padding: 8px 16px; /* Padding */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    padding: 10px 20px; /* Add padding for better spacing */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
     z-index: 10; /* Ensure it stays above other elements */
 }
