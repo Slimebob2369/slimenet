@@ -388,7 +388,7 @@ a.active::before {
 }
 
 .button-icon {
-    width: 20px; /* Smaller size for button icons */
+    width: 3px; /* Smaller size for button icons */
     height: auto;
 }
 
