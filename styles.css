@@ -322,7 +322,6 @@ a.active::before {
 #view-counter:hover::after {
     opacity: 1; /* Show the hover text */
 }
-
 /* Welcome Section */
 #welcome-section {
     display: flex;
@@ -375,7 +374,7 @@ a.active::before {
     background-color: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px; /* Rounded corners */
-    padding: 4px; /* Smaller padding inside the button */
+    padding: 6px; /* Padding inside the button */
     transition: background-color 0.3s ease, transform 0.3s ease;
     display: flex;
     align-items: center;
@@ -388,7 +387,7 @@ a.active::before {
 }
 
 .button-icon {
-    width: 3px; /* Smaller size for button icons */
+    width: 30px; /* Original size for button icons */
     height: auto;
 }
 
@@ -439,11 +438,11 @@ a.active::before {
     }
 
     .welcome-button {
-        padding: 3px; /* Smaller padding for mobile */
+        padding: 5px; /* Smaller padding for mobile */
     }
 
     .button-icon {
-        width: 18px; /* Smaller button icons for mobile */
+        width: 25px; /* Slightly smaller button icons for mobile */
     }
 
     .welcome-image {
